@@ -15,3 +15,36 @@
 'use strict';
 
 // Код возьмите из предыдущего домашнего задания
+
+
+
+// 3) Задайте пользователю по два раза вопросы:
+//     - 'Один из последних просмотренных фильмов?'
+//     - 'На сколько оцените его?'
+// Ответы стоит поместить в отдельные переменные
+// Записать ответы в объект movies в формате: 
+//     movies: {
+//         'logan': '8.1'
+//     }
+
+
+const UserMovieData = {
+    ViewedMoviesRate: {},
+    else: false
+}
+
+for (let i = 0; i < 2; i++) {
+
+    const a = prompt("Один из последних просмотренных фильмов?", ""),  
+        b = +prompt("На сколько оцените его?", "");
+
+    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+        UserMovieData.ViewedMoviesRate[a] = b;
+        console.log('done');
+    } else {
+        console.log('error');
+        i--;
+    }
+}
+
+console.log(UserMovieData);
